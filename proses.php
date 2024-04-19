@@ -25,18 +25,17 @@
             echo "Edit". "<br>"."<a href='index.php'>Lihat</a>";
         }
     }
-    
     if(isset($_GET['hapus'])){
         $id = $_GET['hapus'];
         $query = "DELETE FROM watermeter_db WHERE id = '$id';";
-        $sql = mysqli_query($conn,$query);
+        $sql = mysqli_query($conn, $query);
 
         if($sql){
-            header("location : index.php");
+            header("Location: index.php");
         }
         else{
-            echo $query;
+            echo "Error: " . $query;
         }
     }
-        
-        ?>
+    // }
+?>

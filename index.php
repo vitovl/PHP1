@@ -3,7 +3,7 @@
 
     $query = "SELECT * FROM watermeter_db";
     $sql = mysqli_query($conn, $query);
-
+    $id = 0;
 
 
 ?>
@@ -58,12 +58,11 @@
                 </tr>
             </thead>
             <tbody>
-                <?php
-                    $id = 1; 
+                <?php 
                     while ($result = mysqli_fetch_assoc($sql)){
                 ?>
                 <tr>
-                    <th scope="row" class="text-center"><?php echo $result['id']; ?></th>
+                    <th scope="row" class="text-center"><?php echo ++$id; ?></th>
                     <td class="text-center"><?php echo $result['SerialNumber']; ?></td>
                     <td class="text-center"><?php echo $result['SignalStatus']; ?></td>
                     <td class="text-center"><?php echo $result['RateDataFlow']; ?></td>
